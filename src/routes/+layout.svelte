@@ -1,5 +1,6 @@
 <script>
-	import { gsap } from "gsap";
+	import * as THREE from 'three';
+	import gsap  from "gsap";
 	import favicon from '$lib/assets/favicon.svg';
 	import '$lib/css/global-styles.css';
 	import { NoiseBackground } from '$lib';
