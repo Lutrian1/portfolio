@@ -125,9 +125,19 @@ main{
 @layer grid{
 
     :root {
-        --grid-colomn-amount: 12; /* Veranderd op mobile */
+        --grid-colomn-amount: 8; /* Veranderd op mobile */
         --grid-columns: repeat(var(--grid-colomn-amount), 1fr);
-        --grid-gap: 12px;
+        --grid-gap: 8px;
+    }
+
+    @media (min-width: 768px) {
+
+        :root {
+            --grid-colomn-amount: 12; /* Veranderd op mobile */
+            --grid-columns: repeat(var(--grid-colomn-amount), 1fr);
+            --grid-gap: 12px;
+        }
+
     }
 
     @supports (grid-template-columns: subgrid) {
