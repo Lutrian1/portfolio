@@ -1,0 +1,54 @@
+:root{
+    --distance-from-card: -7.6rem;
+}
+
+.just-wing-it-text{
+    left: -100%;
+    z-index: 10;
+    width: 100%;
+    white-space: nowrap;
+    margin: 0;
+    filter: url(#brush-distort);
+    position: absolute;
+    font-size: clamp(7.813rem, 19.747vw, 15.625rem);
+    font-family: var(--ultra-condensed-font);
+    text-transform: uppercase;
+    font-weight: 800;
+    height: 13.747vw;
+    &::before{
+        content: 'Just Wing It';      
+    }
+    &::after{
+        content: 'Just Wing It';      
+    }
+}
+
+.variation1{
+    animation: infinite-text-scroll-left 5s linear infinite;
+    top: var(--distance-from-card);
+}
+
+.variation2{
+    animation: infinite-text-scroll-right 5s linear infinite;
+    bottom: var(--distance-from-card);
+}
+
+/*
+@keyframes infinite-text-scroll-left {
+    from {
+        transform: translateX(-20%);
+    }
+    to {
+        transform: translateX(-120%);
+    }
+}
+
+@keyframes infinite-text-scroll-right {
+    from {
+        transform: translateX(10%);
+    }
+    to {
+        transform: translateX(120%);
+    }
+}*/
+
