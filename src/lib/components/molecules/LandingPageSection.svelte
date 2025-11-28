@@ -1,6 +1,7 @@
 <script>
     import { JustWingItText1 } from '$lib';
     import { JustWingItText2 } from '$lib';
+    import { MyFigure3D } from '$lib';
 </script>
 
 <section>
@@ -9,6 +10,7 @@
         <h2>Web developer</h2>
         <h3>Based in Haarlem</h3>
         <JustWingItText2 />
+        <MyFigure3D />
     </article>
 </section>
 
