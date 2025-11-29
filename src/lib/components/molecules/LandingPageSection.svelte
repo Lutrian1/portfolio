@@ -25,29 +25,45 @@
     }
 
     h2, h3{
-        text-indent: calc(var(--grid-gap) * 2);
         color: var(--h2-and-h3-color);
         font-family: var(--semi-condensed-font);
         text-transform: uppercase;
         font-weight: normal;
         margin: 0;
+        @media (min-width: 768px) {
+            text-indent: calc(var(--grid-gap) * 2);
+        }
     }
 
     h2{
+        text-align: center;
         height: 13.536vw;
-        font-size: clamp(2.125rem, 16.436vw, 30.5rem);
+        font-size: clamp(1rem, 14.436vw, 30.5rem);
+        @media (min-width: 768px) {
+            text-align: left;
+            font-size: clamp(2.125rem, 16.436vw, 30.5rem);
+        }
     }
 
     h3{
-        margin-top: -0.6vw;
-        text-indent: calc(var(--grid-gap) * 2 + 1.06vw);
-        font-size: clamp(1.5rem, 5.091vw, 7rem);
-        display: grid;
-        position: relative;
-        &::after{
-            text-indent: 9.7vw;
-            grid-column: 10 / var(--grid-colomn-amount);
-            content: 'Based in Haarlem';
+        margin-top: -1.6vw;
+        font-size: clamp(1rem, 3.891vw, 7rem);
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        bottom: 0;
+        @media (min-width: 768px) {
+            text-indent: calc(var(--grid-gap) * 2 + 1.06vw);
+            display: grid;
+            text-align: left;
+            position: relative;
+            margin-top: -0.6vw;
+            font-size: clamp(1.5rem, 5.091vw, 7rem);
+            &::after{
+                text-indent: 9.7vw;
+                grid-column: 10 / var(--grid-colomn-amount);
+                content: 'Based in Haarlem';
+            }
         }
     }
 
