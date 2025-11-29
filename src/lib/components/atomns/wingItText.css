@@ -2,10 +2,21 @@
     --distance-from-card: -7.6rem;
 }
 
-.just-wing-it-text{
+.fake-text, .fake-text-2{
+        &::before{
+        content: 'Just Wing It Just Wing It';      
+    }
+}
+
+.fake-text{
+    position: absolute;
     left: -100%;
+}
+
+.just-wing-it-box-variation-1, .just-wing-it-box-variation-2{
+    width: 100vw;
+    left: calc(-1 * var(--grid-gap) * 2 + -9.3vw);
     z-index: 10;
-    width: 100%;
     white-space: nowrap;
     margin: 0;
     filter: url(#brush-distort);
@@ -14,41 +25,43 @@
     font-family: var(--ultra-condensed-font);
     text-transform: uppercase;
     font-weight: 800;
-    height: 13.747vw;
-    &::before{
-        content: 'Just Wing It';      
-    }
-    &::after{
-        content: 'Just Wing It';      
-    }
 }
 
-.variation1{
-    animation: infinite-text-scroll-left 5s linear infinite;
-    top: var(--distance-from-card);
+.just-wing-it-box-variation-1{
+    top: calc(-1 * var(--grid-gap) * 6 + -3.5vw);
 }
 
-.variation2{
-    animation: infinite-text-scroll-right 5s linear infinite;
-    bottom: var(--distance-from-card);
+.just-wing-it-box-variation-2{
+    bottom: calc(-1 * var(--grid-gap) * 10 + -3.5vw);
+    
 }
 
-/*
+.animation-variation-1{
+    width: fit-content;
+    animation: infinite-text-scroll-left 10s linear infinite;
+}
+
+.animation-variation-2{
+    width: fit-content;
+    animation: infinite-text-scroll-right 10s linear infinite;
+}
+
+
 @keyframes infinite-text-scroll-left {
     from {
-        transform: translateX(-20%);
+        transform: translateX(0%);
     }
     to {
-        transform: translateX(-120%);
+        transform: translateX(100%);
     }
 }
 
 @keyframes infinite-text-scroll-right {
     from {
-        transform: translateX(10%);
+        transform: translateX(100%);
     }
     to {
-        transform: translateX(120%);
+        transform: translateX(0%);
     }
-}*/
+}
 

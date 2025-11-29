@@ -2,5 +2,4 @@
     import '$lib/components/atomns/wingItText.css';
 </script>
 
-<p aria-hidden="true" class="just-wing-it-text variation2">Just wing it</p>
-
+<div aria-hidden="true" class="just-wing-it-box-variation-2"><div class="animation-variation-2"><div class="fake-text"></div><div class="fake-text-2"></div></div></div>
