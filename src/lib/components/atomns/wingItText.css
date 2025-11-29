@@ -33,7 +33,7 @@
 }
 
 .just-wing-it-box-variation-2{
-    bottom: var(--calc-distance-to-top-and-bottom);
+    bottom: calc(var(--calc-distance-to-top-and-bottom) + -2vw);
     
 }
 
