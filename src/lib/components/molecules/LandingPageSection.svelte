@@ -1,4 +1,5 @@
 <script>
+    import { GradientMaskHeadText } from '$lib';
     import { JustWingItText1 } from '$lib';
     import { JustWingItText2 } from '$lib';
     import { MyFigure3D } from '$lib';
@@ -8,6 +9,7 @@
     <article>
         <JustWingItText1 />
         <h2>Web developer</h2>
+        <GradientMaskHeadText />
         <h3>Based in Haarlem</h3>
         <JustWingItText2 />
         <MyFigure3D />
@@ -20,6 +22,7 @@
     }
 
     section{
+        max-height: 100vh;
         overflow: clip;
         padding: calc(var(--grid-gap) * 4) var(--grid-gap);
     }
@@ -38,10 +41,9 @@
     h2{
         text-align: center;
         height: 13.536vw;
-        font-size: clamp(1rem, 14.436vw, 30.5rem);
+        font-size: var(--ultra-big-font-size);
         @media (min-width: 768px) {
             text-align: left;
-            font-size: clamp(2.125rem, 16.436vw, 30.5rem);
         }
     }
 

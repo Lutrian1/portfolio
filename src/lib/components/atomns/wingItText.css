@@ -15,7 +15,7 @@
 }
 
 .just-wing-it-box-variation-1, .just-wing-it-box-variation-2{
-    width: 100vw;
+    width: 1px;
     left: calc(-1 * var(--grid-gap) * 2 + -9.3vw);
     z-index: 10;
     white-space: nowrap;

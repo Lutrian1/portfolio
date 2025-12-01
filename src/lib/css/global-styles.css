@@ -78,6 +78,11 @@ main{
         --expanded-font: 'Ferron-Expanded', sans-serif, Helvetica, Arial;
         --extra-expanded-font: 'Ferron-Extra-Expanded', sans-serif, Helvetica, Arial;
         --ultra-expanded-font: 'Ferron-Ultra-Expanded', sans-serif, Helvetica Arial;
+
+        --ultra-big-font-size: clamp(1rem, 14.436vw, 30.5rem);
+        @media (min-width: 768px) {
+            --ultra-big-font-size: clamp(2.125rem, 16.436vw, 30.5rem);
+        }
     }
 
 }
