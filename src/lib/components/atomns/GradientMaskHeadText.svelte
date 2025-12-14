@@ -1,6 +1,7 @@
 <script>
+  let numberOfDivs = $state(10); 
+  
   $effect(() => {
-    let numberOfDivs = 10;
     const updateDivCount = () => {
       const viewportWidth = window.innerWidth;
       
@@ -19,14 +20,16 @@
     updateDivCount();
     window.addEventListener('resize', updateDivCount);
     
-    return () => window.removeEventListener('resize', updateDivCount);
+    return () => {
+      window.removeEventListener('resize', updateDivCount);
+    };
   });
   
   function calculateOpacity(index, totalDivs) {
-    const minOpacity = 5; // Minimum 5% opacity - never reaches 0
+    const minOpacity = 5;
     const maxOpacity = 90;
     
-    if (totalDivs === 1) return maxOpacity; // Handle edge case
+    if (totalDivs === 1) return maxOpacity; 
     
     const opacityRange = maxOpacity - minOpacity;
     const opacityStep = opacityRange / (totalDivs - 1);
@@ -35,31 +38,31 @@
   }
 </script>
 
-{#each Array(numberOfDivs) as _, i}
-  <div 
-    class="fake-gradient-mask-text-var-{(i % 9) + 1}"
-    style="opacity: {calculateOpacity(i, numberOfDivs)}%"
-  ></div>
+{#each Array(22) as _, i}
+  {#if i < numberOfDivs}
+    <div 
+      class="fake-gradient-mask-text-var-{(i % 9) + 1}"
+      style="opacity: {calculateOpacity(i, numberOfDivs)}%"
+    ></div>
+  {/if}
 {/each}
 
 <style>
-  div {
-    margin-top: -2vw;
-    height: 13.536vw;
-    text-align: center;
-    color: var(--h2-and-h3-color);
-    font-family: var(--semi-condensed-font);
-    font-size: var(--ultra-big-font-size);
-    text-transform: uppercase;
-    
-    &::before{
-      content: 'Web Developer';      
+    div {
+        margin-top: -2vw;
+        height: 13.536vw;
+        text-align: center;
+        color: var(--h2-and-h3-color);
+        font-family: var(--semi-condensed-font);
+        font-size: var(--ultra-big-font-size);
+        text-transform: uppercase;
+        
+        &::before{
+            content: 'Web Developer';      
+        }
+        
+        @media (min-width: 768px) {
+            display: none;
+        }
     }
-    
-    @media (min-width: 768px) {
-      display: none;
-    }
-  }
 </style>
-
-
