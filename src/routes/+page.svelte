@@ -12,7 +12,6 @@
                 start: "top top",
                 end: "+=2000",
                 scrub: 1.3,
-                markers: true
             }
         });
         
@@ -135,71 +134,57 @@
         overflow-x: clip;
         position: relative;
     }
-    
-    .landing-section {
+
+/*----------------------------------- Section styling --------------------------------------*/
+@layer section-styles{
+
+    /* --- General section styling --- */
+    .landing-section, [class^="my-work-section"]{
         position: fixed;
-        top: 0;
         left: 0;
         width: 100%;
+    }
+    
+    [class^="my-work-section"]{
+        height: 100vh;
+        top: 100vh; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* --- Styling for all seperate sections --- */
+    .landing-section {
+        top: 0;
         z-index: 10;
     }
     
     .my-work-section-title {
-        position: fixed;
-        top: 100vh; 
-        left: 0;
-        width: 100%;
-        height: 100vh;
         background-color: var(--color-neutral-300);
         z-index: 20;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
     .my-work-section-first-project{
-        position: fixed;
-        left: 0;
-        top: 100vh; 
-        width: 100%;
-        height: 100vh;
         background-color: red;
         z-index: 30;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
     .my-work-section-second-project{
-        position: fixed;
-        left: 0;
-        top: 100vh; 
-        width: 100%;
-        height: 100vh;
         background-color: blue;
         z-index: 35;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 
     .my-work-section-third-project{
-        position: fixed;
-        left: 0;
-        top: 100vh; 
-        width: 100%;
-        height: 100vh;
         background-color: yellow;
         z-index: 40;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
-    
+}
+
     h4, h5 {
         color: var(--color-neutral-2000);
         font-size: var(--ultra-big-font-size);
         text-transform: uppercase;
         font-family: var(--extra-expanded-font);
     }
+
 </style>
