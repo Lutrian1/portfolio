@@ -25,7 +25,7 @@
     section{
         min-height: 90vh;
         max-height: 100vh;
-        overflow-x: clip;
+        overflow: clip;
         padding: calc(var(--grid-gap) * 4) var(--grid-gap);
         position: fixed;
         display: grid;
