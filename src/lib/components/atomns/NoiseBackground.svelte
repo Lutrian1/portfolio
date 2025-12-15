@@ -21,7 +21,7 @@
     background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
     background-repeat: repeat;
     animation: noise-animation .2s infinite;
-    z-index: 10;
+    z-index: 5000;
     pointer-events: none;
 }
 

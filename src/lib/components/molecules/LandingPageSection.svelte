@@ -23,14 +23,18 @@
     }
 
     section{
-        min-height: 90vh;
+        min-height: 93.5vh;
         max-height: 100vh;
         overflow: clip;
-        padding: calc(var(--grid-gap) * 4) var(--grid-gap);
+        padding: calc(var(--grid-gap) * 4) 0;
         position: fixed;
         display: grid;
         grid-template-columns: var(--grid-columns);
         width: 100%;
+        left: 0;
+        @media (min-width: 768px) {
+            min-height: 90vh;
+        }
     }
 
     h2, h3{

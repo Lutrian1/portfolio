@@ -2,23 +2,20 @@
     import { gsap } from 'gsap';
     import { ScrollTrigger } from 'gsap/ScrollTrigger';
     import { LandingPageSection } from '$lib';
-
+    
     $effect(() => {
         gsap.registerPlugin(ScrollTrigger);
         
-        // All animations in sequence
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: "main",
                 start: "top top",
-                end: "top+=900 top",
+                end: "+=1200", // Increased for smooth transition
                 scrub: 1.3,
-                markers: true,
-                pin: true
             }
         });
         
-        // 1. Wing texts disappear together
+        // Your existing animations...
         tl.to(".just-wing-it-box-variation-1", {
             y: -100,
             opacity: 0,
@@ -29,16 +26,14 @@
             y: 100,
             opacity: 0,
             duration: 0.5
-        }, "<"); // Same time
+        }, "<");
         
-        // 2. h3 - only moves up and fades (NO scale)
         tl.to("h3", {
             y: -60,
             opacity: 0,
             duration: 0.6
         }, ">");
         
-        // 3. h2 moves to center
         const h2 = document.querySelector('h2');
         if (h2) {
             gsap.set(h2, { transformOrigin: "center center" });
@@ -53,21 +48,66 @@
                 duration: 0.9
             }, ">");
             
-            // 4. h2 zooms out
             tl.to(h2, {
                 scale: 100,
                 duration: 1.4
             }, ">");
         }
+        
+        // Slide up the landing section and slide in the next section
+        tl.to(".landing-section", {
+            y: "-100vh",
+            duration: 1
+        }, ">");
+        
+        tl.to(".next-section", {
+            y: "-100vh",
+            duration: 1
+        }, "<"); // Same time
     });
 </script>
 
 <main>
-    <LandingPageSection />
+    <div class="landing-section">
+        <LandingPageSection />
+    </div>
+    
+    <section class="next-section">
+        <h4>MIBOMBO</h4>
+    </section>
 </main>
 
 <style>
-    main{
+    main {
         overflow-x: clip;
+        position: relative;
+    }
+    
+    .landing-section {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 20;
+    }
+    
+    .next-section {
+        position: fixed;
+        top: 100vh; /* Start just below viewport */
+        left: 0;
+        width: 100%;
+        height: 110vh;
+        background-color: var(--color-neutral-300);
+        z-index: 10;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    h4 {
+        color: white;
+        font-size: 20rem;
+        font-family: var(--semi-condensed-font);
+        text-transform: uppercase;
     }
 </style>
