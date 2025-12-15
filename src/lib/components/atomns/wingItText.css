@@ -26,6 +26,7 @@
     font-family: var(--ultra-condensed-font);
     text-transform: uppercase;
     font-weight: 800;
+    z-index: 500;
 }
 
 .just-wing-it-box-variation-1{

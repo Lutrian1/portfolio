@@ -9,6 +9,7 @@
     <article>
         <JustWingItText1 />
         <h2>Web developer</h2>
+        <span class="background-h2"></span>
         <GradientMaskHeadText />
         <h3>Based in Haarlem</h3>
         <JustWingItText2 />
@@ -22,9 +23,14 @@
     }
 
     section{
+        min-height: 90vh;
         max-height: 100vh;
-        overflow: clip;
+        overflow-x: clip;
         padding: calc(var(--grid-gap) * 4) var(--grid-gap);
+        position: fixed;
+        display: grid;
+        grid-template-columns: var(--grid-columns);
+        width: 100%;
     }
 
     h2, h3{
@@ -39,15 +45,28 @@
     }
 
     h2{
+        z-index: 100;
         text-align: center;
+        position: relative;
         height: 13.536vw;
         font-size: var(--ultra-big-font-size);
         @media (min-width: 768px) {
             text-align: left;
         }
     }
+        .background-h2{
+            z-index: -1;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: var(--color-neutral-100);
+            width: 100%;
+            height: 13.436vw;
+            border-radius: var(--border-radius-landing-card1);
+        }
 
     h3{
+        z-index: -8;
         margin-top: -1.6vw;
         font-size: clamp(1rem, 3.891vw, 7rem);
         position: absolute;
@@ -70,6 +89,7 @@
     }
 
     article{
+        z-index: -10;
         position: relative;
         grid-column: 2 / var(--grid-colomn-amount);
         width: calc(100% + var(--grid-gap) * 2);
