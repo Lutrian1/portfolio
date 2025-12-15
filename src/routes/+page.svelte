@@ -105,9 +105,9 @@
     }
     
     h4 {
-        color: white;
-        font-size: 20rem;
+        color: var(--color-neutral-2000);
         font-size: var(--ultra-big-font-size);
         text-transform: uppercase;
+        font-family: var(--extra-expanded-font);
     }
 </style>
