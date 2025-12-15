@@ -10,12 +10,11 @@
             scrollTrigger: {
                 trigger: "main",
                 start: "top top",
-                end: "+=1200", // Increased for smooth transition
+                end: "+=1200",
                 scrub: 1.3,
             }
         });
         
-        // Your existing animations...
         tl.to(".just-wing-it-box-variation-1", {
             y: -100,
             opacity: 0,
@@ -54,16 +53,21 @@
             }, ">");
         }
         
-        // Slide up the landing section and slide in the next section
         tl.to(".landing-section", {
             y: "-100vh",
             duration: 1
         }, ">");
         
-        tl.to(".next-section", {
+        tl.to(".my-work-section-title", {
             y: "-100vh",
             duration: 1
-        }, "<"); // Same time
+        }, "<"); 
+
+        tl.to(".my-work-section-first-project", {
+            y: "-100vh",
+            duration: 1
+        }, ">");
+        
     });
 </script>
 
@@ -72,8 +76,12 @@
         <LandingPageSection />
     </div>
     
-    <section class="next-section">
+    <section class="my-work-section-title">
         <h4>MY WORK</h4>
+    </section>
+
+    <section class="my-work-section-first-project">
+        <h5>ABN AMRO</h5>
     </section>
 </main>
 
@@ -88,23 +96,36 @@
         top: 0;
         left: 0;
         width: 100%;
-        z-index: 20;
+        z-index: 10;
     }
     
-    .next-section {
+    .my-work-section-title {
         position: fixed;
-        top: 100vh; /* Start just below viewport */
+        top: 100vh; 
         left: 0;
         width: 100%;
         height: 100vh;
         background-color: var(--color-neutral-300);
-        z-index: 10;
+        z-index: 20;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .my-work-section-first-project{
+        position: fixed;
+        left: 0;
+        top: 100vh; 
+        width: 100%;
+        height: 100vh;
+        background-color: red;
+        z-index: 30;
         display: flex;
         align-items: center;
         justify-content: center;
     }
     
-    h4 {
+    h4, h5 {
         color: var(--color-neutral-2000);
         font-size: var(--ultra-big-font-size);
         text-transform: uppercase;
