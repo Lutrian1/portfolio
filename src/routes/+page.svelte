@@ -73,7 +73,7 @@
     </div>
     
     <section class="next-section">
-        <h4>MIBOMBO</h4>
+        <h4>MY WORK</h4>
     </section>
 </main>
 
@@ -96,7 +96,7 @@
         top: 100vh; /* Start just below viewport */
         left: 0;
         width: 100%;
-        height: 110vh;
+        height: 100vh;
         background-color: var(--color-neutral-300);
         z-index: 10;
         display: flex;
@@ -107,7 +107,7 @@
     h4 {
         color: white;
         font-size: 20rem;
-        font-family: var(--semi-condensed-font);
+        font-size: var(--ultra-big-font-size);
         text-transform: uppercase;
     }
 </style>
