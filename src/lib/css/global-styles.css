@@ -10,11 +10,6 @@ html{
     color: var(--text-color-primary);
 }
 
-main{
-    width: 100%;
-    height: 400vh;
-}
-
 /*----------------------------------- Font faces and bold styles etc. --------------------------------------*/
 @layer fonts{
 
@@ -152,7 +147,7 @@ main{
             gap: var(--grid-gap);
         }
 
-        header, main, section, footer, aside{
+        header, main, footer, aside{
             display: grid;
             grid-template-columns: subgrid;
             grid-column: 1 / -1;
