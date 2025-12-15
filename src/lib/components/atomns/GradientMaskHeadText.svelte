@@ -1,11 +1,14 @@
 <script>
-  let numberOfDivs = $state(10); 
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  
+  let numberOfDivs = $state(10);
+  let divElements = []; // Store references to all rendered divs
   
   $effect(() => {
     const updateDivCount = () => {
       const viewportWidth = window.innerWidth;
       
-      // Adjust these breakpoints based on your testing
       if (viewportWidth < 300) numberOfDivs = 22;
       else if (viewportWidth < 350) numberOfDivs = 19;
       else if (viewportWidth < 400) numberOfDivs = 16;
@@ -20,8 +23,57 @@
     updateDivCount();
     window.addEventListener('resize', updateDivCount);
     
+    // GSAP Animation
+    gsap.registerPlugin(ScrollTrigger);
+    
+    // Function to animate all current divs
+    const animateDivs = () => {
+      // Get ALL currently rendered divs
+      const currentDivs = Array.from(document.querySelectorAll('[class^="fake-gradient-mask-text-"]'));
+      
+      if (currentDivs.length > 0) {
+        // Kill any existing animations first
+        ScrollTrigger.getAll().forEach(trigger => {
+          if (trigger.animation && trigger.animation.vars.targets === currentDivs) {
+            trigger.kill();
+          }
+        });
+        
+        // Create new animation for ALL divs
+        gsap.to(currentDivs, {
+          scrollTrigger: {
+            trigger: "main",
+            start: "top top",
+            end: "top+=300 top",
+            scrub: 0.7,
+            // markers: true
+          },
+          y: -50,
+          opacity: 0,
+          scale: 0.8,
+          duration: 1.2,
+          ease: "power2.inOut",
+          stagger: 0.02 // Even smaller stagger for many elements
+        });
+        
+        console.log(`Animating ${currentDivs.length} gradient divs`);
+      }
+    };
+    
+    // Initialize animation
+    animateDivs();
+    
+    // Re-animate when numberOfDivs changes (on resize)
+    $effect(() => {
+      // This runs whenever numberOfDivs changes
+      setTimeout(() => {
+        animateDivs();
+      }, 50);
+    });
+    
     return () => {
       window.removeEventListener('resize', updateDivCount);
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
     };
   });
   
@@ -39,16 +91,17 @@
 </script>
 
 {#each Array(22) as _, i}
-  {#if i < numberOfDivs}
-    <div 
-      class="fake-gradient-mask-text-var-{(i % 9) + 1}"
-      style="opacity: {calculateOpacity(i, numberOfDivs)}%"
-    ></div>
-  {/if}
+    {#if i < numberOfDivs}
+        <div 
+          class="fake-gradient-mask-text-var-{(i % 9) + 1}"
+          style="opacity: {calculateOpacity(i, numberOfDivs)}%"
+        ></div>
+    {/if}
 {/each}
 
 <style>
     div {
+        z-index: -8;
         margin-top: -2vw;
         height: 13.536vw;
         text-align: center;
@@ -56,6 +109,7 @@
         font-family: var(--semi-condensed-font);
         font-size: var(--ultra-big-font-size);
         text-transform: uppercase;
+        will-change: transform, opacity;
         
         &::before{
             content: 'Web Developer';      
