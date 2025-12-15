@@ -10,8 +10,9 @@
             scrollTrigger: {
                 trigger: "main",
                 start: "top top",
-                end: "+=1200",
+                end: "+=2000",
                 scrub: 1.3,
+                markers: true
             }
         });
         
@@ -61,13 +62,48 @@
         tl.to(".my-work-section-title", {
             y: "-100vh",
             duration: 1
-        }, "<"); 
-
+        }, "<");
+        
+        gsap.set(".my-work-section-first-project", { y: "100vh" });
+        
+        tl.to(".my-work-section-first-project", {
+            y: "0vh",
+            duration: 1,
+            ease: "power2.out"
+        }, ">");
+        
+        gsap.set(".my-work-section-second-project", { 
+            y: "100vh"
+        });
+        
         tl.to(".my-work-section-first-project", {
             y: "-100vh",
             duration: 1
         }, ">");
         
+        tl.to(".my-work-section-second-project", {
+            y: "0vh",
+            duration: 1
+        }, "<");
+        
+        gsap.set(".my-work-section-third-project", { 
+            y: "100vh"
+        });
+        
+        tl.to(".my-work-section-second-project", {
+            y: "-100vh",
+            duration: 1
+        }, ">");
+        
+        tl.to(".my-work-section-third-project", {
+            y: "0vh",
+            duration: 1
+        }, "<");
+        
+        tl.to(".my-work-section-third-project", {
+            y: "-100vh",
+            duration: 1
+        }, ">");
     });
 </script>
 
@@ -81,8 +117,17 @@
     </section>
 
     <section class="my-work-section-first-project">
-        <h5>ABN AMRO</h5>
+        <h5>BATS!</h5>
     </section>
+    
+    <section class="my-work-section-second-project">
+        <h5>HEY JOH!</h5>
+    </section>
+ 
+    <section class="my-work-section-third-project">
+        <h5>DIKKE W!</h5>
+    </section>
+
 </main>
 
 <style>
@@ -120,6 +165,32 @@
         height: 100vh;
         background-color: red;
         z-index: 30;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .my-work-section-second-project{
+        position: fixed;
+        left: 0;
+        top: 100vh; 
+        width: 100%;
+        height: 100vh;
+        background-color: blue;
+        z-index: 35;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .my-work-section-third-project{
+        position: fixed;
+        left: 0;
+        top: 100vh; 
+        width: 100%;
+        height: 100vh;
+        background-color: yellow;
+        z-index: 40;
         display: flex;
         align-items: center;
         justify-content: center;
