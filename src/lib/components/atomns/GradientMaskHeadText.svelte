@@ -56,7 +56,6 @@
           stagger: 0.02 // Even smaller stagger for many elements
         });
         
-        console.log(`Animating ${currentDivs.length} gradient divs`);
       }
     };
     
