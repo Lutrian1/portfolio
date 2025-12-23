@@ -92,6 +92,7 @@
 {#each Array(22) as _, i}
     {#if i < numberOfDivs}
         <div 
+          aria-hidden="true"
           class="fake-gradient-mask-text-var-{(i % 9) + 1}"
           style="opacity: {calculateOpacity(i, numberOfDivs)}%"
         ></div>

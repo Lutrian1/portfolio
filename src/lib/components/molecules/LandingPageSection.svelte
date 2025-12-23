@@ -11,7 +11,7 @@
         <h2>Web developer</h2>
         <span class="background-h2"></span>
         <GradientMaskHeadText />
-        <h3>Based in Haarlem</h3>
+        <h3>Based in Haarlem<span class="copy-text-fake" aria-hidden="true">Based in Haarlem</span></h3>
         <JustWingItText2 />
         <MyFigure3D />
     </article>
@@ -66,7 +66,7 @@
             background-color: var(--color-neutral-100);
             width: 100%;
             height: 13.436vw;
-            border-radius: var(--border-radius-landing-card1);
+            border-radius: var(--border-radius-landing-card1) var(--border-radius-landing-card1) 0 0;
         }
 
     h3{
@@ -84,11 +84,15 @@
             position: relative;
             margin-top: -0.6vw;
             font-size: clamp(1.5rem, 5.091vw, 7rem);
-            &::after{
-                text-indent: 9.7vw;
-                grid-column: 10 / var(--grid-colomn-amount);
-                content: 'Based in Haarlem';
-            }
+        }
+    }
+
+    .copy-text-fake{
+        display: none;
+        @media (min-width: 768px) {
+            display: block;
+            text-indent: 9.7vw;
+            grid-column: 10 / var(--grid-colomn-amount);
         }
     }
 
