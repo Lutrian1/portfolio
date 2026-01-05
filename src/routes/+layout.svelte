@@ -1,7 +1,7 @@
 <script>
 	import * as THREE from 'three';
 	import gsap  from "gsap";
-	import favicon from '$lib/assets/favicon.svg';
+	import favicon from '$lib/assets/images/logo-luuk-tol.png';
 	import '$lib/css/global-styles.css';
 	import { NoiseBackground } from '$lib';
 
