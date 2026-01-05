@@ -6,4 +6,3 @@ export { default as NoiseBackground } from './components/atomns/NoiseBackground.
 export { default as LandingPageSection } from './components/molecules/LandingPageSection.svelte';
 export { default as MyFigure3D } from './components/organisms/MyFigure3D.svelte';
 
-// SVG's / IMAGES
