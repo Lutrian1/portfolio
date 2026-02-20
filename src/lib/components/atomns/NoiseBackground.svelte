@@ -1,4 +1,4 @@
-<div class="noise-bg"></div>
+<div class="noise-fg"></div>
 
 <svg width="0" height="0" style="position:absolute;">
     <filter id='brush-distort' x='0%' y='0%' width='100%' height='100%'>
@@ -9,34 +9,75 @@
 
 <style>
     
-.noise-bg {
+.noise-fg {
     position: fixed;
-    opacity: 1.5;
-    top: -50%;
-    left: -50%;
-    right: -50%;
-    bottom: -50%;
-    width: 200%;
-    height: 200vh;
-    background: transparent url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
-    background-repeat: repeat;
-    animation: noise-animation .2s infinite;
-    z-index: 5000;
     pointer-events: none;
+    top: -10rem;
+    left: -10rem;
+    animation: noise-animation .4s steps(2) infinite;
+    background: url('http://assets.iceable.com/img/noise-transparent.png') repeat 0 0;
+    background-repeat: repeat;
+    background-position: 50%;
+    width: calc(100% + 20rem);
+    height: calc(100% + 20rem);
+    content: "";
+    z-index: 50000;
 }
 
 @keyframes noise-animation {
-    0% { transform: translate(0,0) }
-    10% { transform: translate(-2%,-2%) }
-    20% { transform: translate(-5%,7%) }
-    30% { transform: translate(7%,-8%) }
-    40% { transform: translate(-7%,10%) }
-    50% { transform: translate(-10%,5%) }
-    60% { transform: translate(10%,0) }
-    70% { transform: translate(0,10%) }
-    80% { transform: translate(-10%,0) }
-    90% { transform: translate(10%,5%) }
-    100% { transform: translate(5%,0) }
-}
+    0% {
+        -webkit-transform: translate3d(0,9rem,0);
+        transform: translate3d(0,9rem,0)
+    }
 
+    10% {
+        -webkit-transform: translate3d(-1rem,-4rem,0);
+        transform: translate3d(-1rem,-4rem,0)
+    }
+
+    20% {
+        -webkit-transform: translate3d(-8rem,2rem,0);
+        transform: translate3d(-8rem,2rem,0)
+    }
+
+    30% {
+        -webkit-transform: translate3d(9rem,-9rem,0);
+        transform: translate3d(9rem,-9rem,0)
+    }
+
+    40% {
+        -webkit-transform: translate3d(-2rem,7rem,0);
+        transform: translate3d(-2rem,7rem,0)
+    }
+
+    50% {
+        -webkit-transform: translate3d(-9rem,-4rem,0);
+        transform: translate3d(-9rem,-4rem,0)
+    }
+
+    60% {
+        -webkit-transform: translate3d(2rem,6rem,0);
+        transform: translate3d(2rem,6rem,0)
+    }
+
+    70% {
+        -webkit-transform: translate3d(7rem,-8rem,0);
+        transform: translate3d(7rem,-8rem,0)
+    }
+
+    80% {
+        -webkit-transform: translate3d(-9rem,1rem,0);
+        transform: translate3d(-9rem,1rem,0)
+    }
+
+    90% {
+        -webkit-transform: translate3d(6rem,-5rem,0);
+        transform: translate3d(6rem,-5rem,0)
+    }
+
+    to {
+        -webkit-transform: translate3d(-7rem,0,0);
+        transform: translate3d(-7rem,0,0)
+    }
+}
 </style>

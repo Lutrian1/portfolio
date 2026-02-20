@@ -3,121 +3,121 @@
     import { ScrollTrigger } from 'gsap/ScrollTrigger'
     import { LandingPageSection } from '$lib'
 
-    $effect(() => {
-        // -------------------------------------------------------------------- //
-        // ---------------------- 1. Alle variabelen -------------------------- //
-        // -------------------------------------------------------------------- //
+    // $effect(() => {
+    //     // -------------------------------------------------------------------- //
+    //     // ---------------------- 1. Alle variabelen -------------------------- //
+    //     // -------------------------------------------------------------------- //
 
-        const root = document.documentElement
-        const main = document.querySelector('main')
-        const h2 = document.querySelector('h2')
+    //     const root = document.documentElement
+    //     const main = document.querySelector('main')
+    //     const h2 = document.querySelector('h2')
 
-        // -------------------------------------------------------------------- //
-        // ------------------------- 2. Code Logic ---------------------------- //
-        // -------------------------------------------------------------------- //
+    //     // -------------------------------------------------------------------- //
+    //     // ------------------------- 2. Code Logic ---------------------------- //
+    //     // -------------------------------------------------------------------- //
 
-        gsap.registerPlugin(ScrollTrigger)
+    //     gsap.registerPlugin(ScrollTrigger)
 
-        // Enable JS and Remove JS-disabled class that is standardly loaded
-        root.classList.remove('js-disabled')
-        root.classList.add('js-enabled')
+    //     // Enable JS and Remove JS-disabled class that is standardly loaded
+    //     root.classList.remove('js-disabled')
+    //     root.classList.add('js-enabled')
 
-        // Set main height to the total height of all sections so there are 4. 4 * 100 (each being 100vh in height)
-        main.style.height = '400vh'
+    //     // Set main height to the total height of all sections so there are 4. 4 * 100 (each being 100vh in height)
+    //     main.style.height = '400vh'
 
-        const timeline = gsap.timeline({
-            scrollTrigger: {
-                trigger: 'main',
-                start: 'top top',
-                end: '+=2000',
-                scrub: 1.6 
-            }
-        })
+    //     const timeline = gsap.timeline({
+    //         scrollTrigger: {
+    //             trigger: 'main',
+    //             start: 'top top',
+    //             end: '+=2000',
+    //             scrub: 1.6 
+    //         }
+    //     })
 
-        timeline.to('.just-wing-it-box-variation-1', {
-            y: -100,
-            opacity: 0,
-            duration: 1 
-        })
+    //     timeline.to('.just-wing-it-box-variation-1', {
+    //         y: -100,
+    //         opacity: 0,
+    //         duration: 1 
+    //     })
 
-        timeline.to('.just-wing-it-box-variation-2', {
-            y: 100,
-            opacity: 0,
-            duration: 1
-        }, '<')
+    //     timeline.to('.just-wing-it-box-variation-2', {
+    //         y: 100,
+    //         opacity: 0,
+    //         duration: 1
+    //     }, '<')
 
-        timeline.to('h3', {
-            y: -60,
-            opacity: 0,
-            duration: 1.2
-        }, '>')
+    //     timeline.to('h3', {
+    //         y: -60,
+    //         opacity: 0,
+    //         duration: 1.2
+    //     }, '>')
 
-        if (h2) {
-            const h2Rect = h2.getBoundingClientRect()
-            const windowWidth = window.innerWidth
-            const windowHeight = window.innerHeight
+    //     if (h2) {
+    //         const h2Rect = h2.getBoundingClientRect()
+    //         const windowWidth = window.innerWidth
+    //         const windowHeight = window.innerHeight
 
-            timeline.to(h2, {
-                x: windowWidth / 2 - (h2Rect.left + h2Rect.width / 2),
-                y: windowHeight / 2 - (h2Rect.top + h2Rect.height / 2),
-                duration: 2, 
-                ease: 'expo.inOut'
-            })
+    //         timeline.to(h2, {
+    //             x: windowWidth / 2 - (h2Rect.left + h2Rect.width / 2),
+    //             y: windowHeight / 2 - (h2Rect.top + h2Rect.height / 2),
+    //             duration: 2, 
+    //             ease: 'expo.inOut'
+    //         })
 
-            timeline.to(h2, {
-                scale: 100,
-                duration: 2, 
-                ease: 'expo.inOut'
-            })
-        }
+    //         timeline.to(h2, {
+    //             scale: 100,
+    //             duration: 2, 
+    //             ease: 'expo.inOut'
+    //         })
+    //     }
 
-        timeline.to('.landing-section', {
-            y: '-100vh',
-            duration: 2 
-        }, '>')
+    //     timeline.to('.landing-section', {
+    //         y: '-100vh',
+    //         duration: 2 
+    //     }, '>')
         
-        timeline.to('.my-work-section-title', {
-            y: '-100vh',
-            duration: 2
-        }, '<')
+    //     timeline.to('.my-work-section-title', {
+    //         y: '-100vh',
+    //         duration: 2
+    //     }, '<')
         
-        gsap.set('.my-work-section-first-project', { y: '100vh' })
+    //     gsap.set('.my-work-section-first-project', { y: '100vh' })
         
-        timeline.to('.my-work-section-first-project', {
-            y: '0vh',
-            duration: 2,
-            ease: 'power2.out'
-        }, '>')
+    //     timeline.to('.my-work-section-first-project', {
+    //         y: '0vh',
+    //         duration: 2,
+    //         ease: 'power2.out'
+    //     }, '>')
         
-        gsap.set('.my-work-section-second-project', { y: '100vh' })
+    //     gsap.set('.my-work-section-second-project', { y: '100vh' })
         
-        timeline.to('.my-work-section-first-project', {
-            y: '-100vh',
-            duration: 2
-        }, '>')
+    //     timeline.to('.my-work-section-first-project', {
+    //         y: '-100vh',
+    //         duration: 2
+    //     }, '>')
         
-        timeline.to('.my-work-section-second-project', {
-            y: '0vh',
-            duration: 2
-        }, '<')
+    //     timeline.to('.my-work-section-second-project', {
+    //         y: '0vh',
+    //         duration: 2
+    //     }, '<')
         
-        gsap.set('.my-work-section-third-project', { y: '100vh' })
+    //     gsap.set('.my-work-section-third-project', { y: '100vh' })
         
-        timeline.to('.my-work-section-second-project', {
-            y: '-100vh',
-            duration: 2
-        }, '>')
+    //     timeline.to('.my-work-section-second-project', {
+    //         y: '-100vh',
+    //         duration: 2
+    //     }, '>')
         
-        timeline.to('.my-work-section-third-project', {
-            y: '0vh',
-            duration: 2
-        }, '<')
+    //     timeline.to('.my-work-section-third-project', {
+    //         y: '0vh',
+    //         duration: 2
+    //     }, '<')
         
-        timeline.to('.my-work-section-third-project', {
-            y: '-100vh',
-            duration: 2
-        }, '>')
-    })
+    //     timeline.to('.my-work-section-third-project', {
+    //         y: '-100vh',
+    //         duration: 2
+    //     }, '>')
+    // })
 </script>
 
 <main>

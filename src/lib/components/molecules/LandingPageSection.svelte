@@ -37,6 +37,16 @@
         }
     }
 
+    article{
+        z-index: -10;
+        position: relative;
+        grid-column: 2 / var(--grid-colomn-amount);
+        width: calc(100% + var(--grid-gap) * 2);
+        left: calc(-1 * var(--grid-gap));
+        border-radius: var(--border-radius-landing-card1);
+        background-color: var(--color-neutral-100);
+    }
+
     h2, h3{
         color: var(--h2-and-h3-color);
         font-family: var(--semi-condensed-font);
@@ -94,16 +104,6 @@
             text-indent: 9.7vw;
             grid-column: 10 / var(--grid-colomn-amount);
         }
-    }
-
-    article{
-        z-index: -10;
-        position: relative;
-        grid-column: 2 / var(--grid-colomn-amount);
-        width: calc(100% + var(--grid-gap) * 2);
-        left: calc(-1 * var(--grid-gap));
-        border-radius: var(--border-radius-landing-card1);
-        background-color: var(--color-neutral-100);
     }
 
 </style>
