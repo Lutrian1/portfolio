@@ -23,8 +23,8 @@
     }
 
     section{
-        min-height: 93.5vh;
-        max-height: 100vh;
+        min-height: calc(100% - calc(var(--grid-gap) * 8));
+        max-height: 100%;
         overflow: clip;
         padding: calc(var(--grid-gap) * 4) 0;
         position: fixed;
@@ -33,7 +33,7 @@
         width: 100%;
         left: 0;
         @media (min-width: 768px) {
-            min-height: 90vh;
+            min-height: 90%;
         }
     }
 

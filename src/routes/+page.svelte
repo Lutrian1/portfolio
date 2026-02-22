@@ -147,7 +147,7 @@
     main {
         overflow-x: clip;
         position: relative;
-        height: auto;
+        height: 400vh; /* 4 sections, each 100vh */
     }
 
 /*----------------------------------- Section styling --------------------------------------*/
