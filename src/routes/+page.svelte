@@ -328,7 +328,7 @@
         }
 
         main {
-            height: calc(var(--landing-section-height) + (var(--my-work-section-amount) * var(--my-work-section-height)) - var(--fake-gapper-height)); /* 100vh (landing) + 100vh × 4 sections - the fake gapper height since that is removed */
+            height: auto;
         }
     }
 

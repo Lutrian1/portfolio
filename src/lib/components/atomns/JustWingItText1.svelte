@@ -32,4 +32,5 @@
     :global(.js-enabled) .just-wing-it-box-variation-1 {
         animation: none;
     }
+
 </style>
