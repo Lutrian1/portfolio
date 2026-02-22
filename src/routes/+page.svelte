@@ -148,7 +148,7 @@
     main {
         overflow-x: clip;
         position: relative;
-        height: 600vh; /* 200vh (landing + fake gapper) + 100vh × 4 sections = 600vh */
+        height: 700vh; /* 200vh (landing + fake gapper) + 100vh × 4 sections = 700vh */
     }
 
 /*----------------------------------- Section styling --------------------------------------*/
@@ -174,13 +174,61 @@
         .landing-section {
             top: 0;
             z-index: 10;
+            position: relative; /* Added for absolute positioning context */
+            overflow: hidden; /* Prevents scaled text from overflowing */
+        }
+
+        /* Style for the h2 element */
+        .landing-section :global(h2) {
+            position: absolute;
+            /* Starting position - wherever it naturally is */
+            /* You might need to adjust these values based on your actual h2 position */
+            margin: 0;
+            white-space: nowrap;
+            color: var(--color-neutral-2000); /* Your text color */
+            font-size: var(--ultra-big-font-size); /* Your font size */
+            font-family: var(--extra-expanded-font); /* Your font family */
+            text-transform: uppercase;
+            
+            /* Animation */
+            animation: moveToCenterAndScale linear forwards;
+            animation-timeline: scroll(root);
+            animation-range: 50vh 200vh; /* Animate over first 200vh of scroll */
+        }
+
+        /* Keyframes for the text animation */
+        @keyframes moveToCenterAndScale {
+            0% {
+                /* Starting position - adjust these values based on where your h2 initially is */
+                top: 0%; /* Example: starts at 20% from top */
+                left: 0%; /* Example: starts at 30% from left */
+                transform: translate(0, 0) scale(1);
+            }
+            30% {
+                /* Moves to center */
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(1);
+            }
+            70% {
+                /* Starts scaling up */
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(5);
+            }
+            100% {
+                /* Final state - large scale and faded */
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) scale(100);
+            }
         }
 
         .my-work-section-fake-gapper {
-            height: 100vh;
-            top: 0; 
-            z-index: 5; 
-            background: transparent; 
+            height: 200vh;
+            top: 0;
+            z-index: 5;
+            background: transparent;
             pointer-events: none;
         }   
         
@@ -213,6 +261,14 @@
             position: fixed;
             width: 100%;
             left: 0;
+        }
+
+        /* Disable CSS animations when JS is enabled */
+        :global(.js-enabled) .landing-section :global(h2) {
+            animation: none;
+            /* Reset to JS-controlled positioning */
+            position: fixed;
+            /* Other positioning will be handled by GSAP */
         }
 
         /* Hide the fake gapper when JS is enabled */

@@ -11,7 +11,7 @@
         <h2>Web developer</h2>
         <span class="background-h2"></span>
         <GradientMaskHeadText />
-        <h3>Based in Haarlem<span class="copy-text-fake" aria-hidden="true">Based in Haarlem</span></h3>
+        <h3 class="based-haarlem-text">Based in Haarlem<span class="copy-text-fake" aria-hidden="true">Based in Haarlem</span></h3>
         <JustWingItText2 />
         <MyFigure3D />
     </article>
@@ -68,18 +68,19 @@
             text-align: left;
         }
     }
-        .background-h2{
-            z-index: -1;
-            position: absolute;
-            left: 0;
-            top: 0;
-            background-color: var(--color-neutral-100);
-            width: 100%;
-            height: 13.436vw;
-            border-radius: var(--border-radius-landing-card1) var(--border-radius-landing-card1) 0 0;
-        }
+    .background-h2{
+        z-index: -1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: var(--color-neutral-100);
+        width: 100%;
+        height: 13.436vw;
+        border-radius: var(--border-radius-landing-card1) var(--border-radius-landing-card1) 0 0;
+    }
 
-    h3{
+    /* Based in Haarlem text animation */
+    .based-haarlem-text {
         z-index: -8;
         margin-top: -1.6vw;
         font-size: clamp(1rem, 3.891vw, 7rem);
@@ -87,13 +88,37 @@
         text-align: center;
         width: 100%;
         bottom: 0;
+        
+        /* Animation properties */
+        animation: none;
+        
         @media (min-width: 768px) {
+            animation: animation-move-up-and-fade linear forwards;
+            animation-timeline: scroll(root);
+            animation-range: 5vh 100vh; /* Animate over first 200vh of scroll */
             text-indent: calc(var(--grid-gap) * 2 + 1.06vw);
             display: grid;
             text-align: left;
             position: relative;
             margin-top: -0.6vw;
             font-size: clamp(1.5rem, 5.091vw, 7rem);
+        }
+        
+    }
+
+    /* Keyframes for the move up and fade animation */
+    @keyframes animation-move-up-and-fade {
+        0% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        50% {
+            transform: translateY(-60px);
+            opacity: 0.5;
+        }
+        100% {
+            transform: translateY(-120px);
+            opacity: 0;
         }
     }
 
@@ -106,4 +131,8 @@
         }
     }
 
+    /* When JS is enabled, disable the CSS animation */
+    :global(.js-enabled) .based-haarlem-text {
+        animation: none;
+    }
 </style>
