@@ -14,7 +14,7 @@
     .just-wing-it-box-variation-1 {
         animation: animation-move-up-and-fade linear forwards;
         animation-timeline: scroll(root);
-        animation-range: 0vh 50vh; 
+        animation-range: 0vh 30vh; 
     }
 
     @keyframes animation-move-up-and-fade {
