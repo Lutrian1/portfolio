@@ -124,6 +124,8 @@
     <div class="landing-section js-disabled">
         <LandingPageSection />
     </div>
+
+    <div class="my-work-section-fake-gapper js-disabled"></div>
     
     <section class="my-work-section-title js-disabled">
         <h4>MY WORK</h4>
@@ -143,11 +145,10 @@
 </main>
 
 <style>
-
     main {
         overflow-x: clip;
         position: relative;
-        height: 400vh; /* 4 sections, each 100vh */
+        height: 600vh; /* 200vh (landing + fake gapper) + 100vh × 4 sections = 600vh */
     }
 
 /*----------------------------------- Section styling --------------------------------------*/
@@ -174,6 +175,14 @@
             top: 0;
             z-index: 10;
         }
+
+        .my-work-section-fake-gapper {
+            height: 100vh;
+            top: 0; 
+            z-index: 5; 
+            background: transparent; 
+            pointer-events: none;
+        }   
         
         .my-work-section-title {
             background-color: var(--color-neutral-300);
@@ -196,7 +205,6 @@
         }
 
     /*----------------------------------- Section styling (JS ENABLED) --------------------------------------*/
-
         /* These styles will only apply when JS adds the js-enabled class */
 
         /* General section styling (when JS is Enabled) */
@@ -205,6 +213,11 @@
             position: fixed;
             width: 100%;
             left: 0;
+        }
+
+        /* Hide the fake gapper when JS is enabled */
+        :global(.js-enabled) .my-work-section-fake-gapper {
+            display: none;
         }
 
         :global(.js-enabled) [class^="my-work-section"] {
