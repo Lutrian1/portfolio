@@ -50,12 +50,13 @@
 	height: 85%;
 	mask-image: linear-gradient(var(--color-neutral-100) 1%,transparent 95%);
     overflow: hidden;
+	position: absolute;
 	
 	> div {
 		height:100%;
 	}
 	
-	div {
+	div div{
 		color: var(--h2-and-h3-color);
 		font-family: var(--semi-condensed-font);
 		text-transform: uppercase;
@@ -68,7 +69,7 @@
 		animation-name: scroll-animation-mask-head-text;
 		animation-fill-mode: forwards;
 		animation-timeline: scroll(y root);
-		animation-range: calc(var(--ultra-big-font-size) * sibling-index()) calc(var(--ultra-big-font-size) * sibling-index() + var(--ultra-big-font-size));
+		animation-range: calc(var(--ultra-big-font-size) * sibling-index()) calc(var(--ultra-big-font-size) * (sibling-index() + 5));
 	}
 
       @media (min-width: 768px) {
