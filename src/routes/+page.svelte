@@ -148,7 +148,7 @@
     main {
         overflow-x: clip;
         position: relative;
-        height: 700vh; /* 200vh (landing + fake gapper) + 100vh × 4 sections = 700vh */
+        height: 750vh; /* 250vh (landing + fake gapper) + 100vh × 4 sections = 750vh */
     }
 
 /*----------------------------------- Section styling --------------------------------------*/
@@ -193,7 +193,7 @@
             /* Animation */
             animation: moveToCenterAndScale linear forwards;
             animation-timeline: scroll(root);
-            animation-range: 50vh 200vh; /* Animate over first 200vh of scroll */
+            animation-range: 75vh 250vh; /* Animate over first 200vh of scroll */
         }
 
         /* Keyframes for the text animation */
@@ -225,7 +225,7 @@
         }
 
         .my-work-section-fake-gapper {
-            height: 200vh;
+            height: 250vh;
             top: 0;
             z-index: 5;
             background: transparent;

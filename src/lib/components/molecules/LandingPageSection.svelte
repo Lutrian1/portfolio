@@ -95,7 +95,7 @@
         @media (min-width: 768px) {
             animation: animation-move-up-and-fade linear forwards;
             animation-timeline: scroll(root);
-            animation-range: 5vh 100vh; /* Animate over first 200vh of scroll */
+            animation-range: 30vh 75vh; /* Animate over first 200vh of scroll */
             text-indent: calc(var(--grid-gap) * 2 + 1.06vw);
             display: grid;
             text-align: left;
