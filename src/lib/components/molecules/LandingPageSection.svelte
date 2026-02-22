@@ -88,8 +88,6 @@
         text-align: center;
         width: 100%;
         bottom: 0;
-        
-        /* Animation properties */
         animation: none;
         
         @media (min-width: 768px) {

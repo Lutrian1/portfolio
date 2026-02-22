@@ -174,34 +174,30 @@
         .landing-section {
             top: 0;
             z-index: 10;
-            position: relative; /* Added for absolute positioning context */
-            overflow: hidden; /* Prevents scaled text from overflowing */
+            position: relative; 
+            overflow: hidden; 
         }
 
-        /* Style for the h2 element */
         .landing-section :global(h2) {
             position: absolute;
-            /* Starting position - wherever it naturally is */
-            /* You might need to adjust these values based on your actual h2 position */
             margin: 0;
             white-space: nowrap;
-            color: var(--color-neutral-2000); /* Your text color */
-            font-size: var(--ultra-big-font-size); /* Your font size */
-            font-family: var(--extra-expanded-font); /* Your font family */
+            color: var(--color-neutral-2000); /
+            font-size: var(--ultra-big-font-size); 
+            font-family: var(--extra-expanded-font); 
             text-transform: uppercase;
             
             /* Animation */
-            animation: moveToCenterAndScale linear forwards;
+            animation: animation-move-to-center-and-scale linear forwards;
             animation-timeline: scroll(root);
-            animation-range: 75vh 250vh; /* Animate over first 200vh of scroll */
+            animation-range: 75vh 250vh; 
         }
 
         /* Keyframes for the text animation */
-        @keyframes moveToCenterAndScale {
+        @keyframes animation-move-to-center-and-scale {
             0% {
-                /* Starting position - adjust these values based on where your h2 initially is */
-                top: 0%; /* Example: starts at 20% from top */
-                left: 0%; /* Example: starts at 30% from left */
+                top: 0%; 
+                left: 0%; 
                 transform: translate(0, 0) scale(1);
             }
             30% {
@@ -210,7 +206,7 @@
                 left: 50%;
                 transform: translate(-50%, -50%) scale(1);
             }
-            70% {
+            50% {
                 /* Starts scaling up */
                 top: 50%;
                 left: 50%;
@@ -266,9 +262,7 @@
         /* Disable CSS animations when JS is enabled */
         :global(.js-enabled) .landing-section :global(h2) {
             animation: none;
-            /* Reset to JS-controlled positioning */
             position: fixed;
-            /* Other positioning will be handled by GSAP */
         }
 
         /* Hide the fake gapper when JS is enabled */

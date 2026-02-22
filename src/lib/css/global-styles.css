@@ -158,3 +158,15 @@ html{
     }
 
 }
+
+/*----------------------------------- scroll animation support for the entire website, shuts off any scroll animation if it isn't supported. --------------------------------------*/
+@layer scroll-animation-support{
+
+    @supports not (animation-timeline: scroll(root)) {
+        * {
+            animation-timeline: none;
+            animation-range: 0;
+        }
+    }
+    
+}
