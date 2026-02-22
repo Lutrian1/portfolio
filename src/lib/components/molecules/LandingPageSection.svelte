@@ -133,4 +133,10 @@
     :global(.js-enabled) .based-haarlem-text {
         animation: none;
     }
+
+    @supports not (animation-timeline: scroll()) {
+        .based-haarlem-text {
+            animation: none;
+        }
+  }
 </style>
