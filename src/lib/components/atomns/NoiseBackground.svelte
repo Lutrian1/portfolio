@@ -1,9 +1,24 @@
 <div class="noise-fg"></div>
 
 <svg width="0" height="0" style="position:absolute;">
-    <filter id='brush-distort' x='0%' y='0%' width='100%' height='100%'>
-      <feTurbulence baseFrequency="0.01 0.2" result="NOISE" numOctaves="2"/>
-	  <feDisplacementMap in="SourceGraphic" in2="NOISE" scale="20" xChannelSelector="R" yChannelSelector="R"></feDisplacementMap>  
+    <filter id='brush-distort' x='0%' y='0%' width='100%' height='100%' color-interpolation-filters="sRGB">
+        <feTurbulence baseFrequency="0.015 0.25" result="NOISE" numOctaves="3" seed="2"/>
+        
+        <feDisplacementMap 
+            in="SourceGraphic" 
+            in2="NOISE" 
+            scale="15" 
+            xChannelSelector="R" 
+            yChannelSelector="G"
+        />
+        
+        <feDisplacementMap 
+            in="SourceGraphic" 
+            in2="NOISE" 
+            scale="10" 
+            xChannelSelector="G" 
+            yChannelSelector="B"
+        />
     </filter>
 </svg>
 
