@@ -330,6 +330,10 @@
         main {
             height: auto;
         }
+
+        .landing-section :global(h2) {
+            animation: none !important;
+        }
     }
 
 </style>

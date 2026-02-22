@@ -136,7 +136,8 @@
 
     @supports not (animation-timeline: scroll()) {
         .based-haarlem-text {
-            animation: none;
+            animation: none !important;
         }
-  }
+    }
+
 </style>
