@@ -145,10 +145,17 @@
 </main>
 
 <style>
+    :root{
+        --fake-gapper-height: 250vh;
+        --my-work-section-amount: 4; /* Change this to the amount of 'my-work' sections (except gapper) that there are on the page*/
+        --my-work-section-height: 100vh;
+        --landing-section-height: 100vh;
+    }
+
     main {
         overflow-x: clip;
         position: relative;
-        height: 750vh; /* 250vh (landing + fake gapper) + 100vh × 4 sections = 750vh */
+        height: calc(var(--fake-gapper-height) + var(--landing-section-height) + (var(--my-work-section-amount) * var(--my-work-section-height))); /* 350vh (landing + fake gapper) + 100vh × 4 sections*/
     }
 
 /*----------------------------------- Section styling --------------------------------------*/
@@ -167,7 +174,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            height: 100vh;
+            height: var(--my-work-section-height);
         }
 
         /* --- Styling for all seperate sections --- */
@@ -182,7 +189,7 @@
             position: absolute;
             margin: 0;
             white-space: nowrap;
-            color: var(--color-neutral-2000); /
+            color: var(--color-neutral-2000); 
             font-size: var(--ultra-big-font-size); 
             font-family: var(--extra-expanded-font); 
             text-transform: uppercase;
@@ -190,7 +197,7 @@
             /* Animation */
             animation: animation-move-to-center-and-scale linear forwards;
             animation-timeline: scroll(root);
-            animation-range: 75vh 250vh; 
+            animation-range: 75vh var(--fake-gapper-height); /* Animation starts at the first value, ends at the height of the fake-gapper */
         }
 
         /* Keyframes for the text animation */
@@ -221,7 +228,7 @@
         }
 
         .my-work-section-fake-gapper {
-            height: 250vh;
+            height: var(--fake-gapper-height);
             top: 0;
             z-index: 5;
             background: transparent;
@@ -271,7 +278,7 @@
         }
 
         :global(.js-enabled) [class^="my-work-section"] {
-            height: 100vh;
+            height: var(--my-work-section-height);
             top: 100vh;
             display: flex;
             align-items: center;
@@ -312,4 +319,17 @@
         text-transform: uppercase;
         font-family: var(--extra-expanded-font);
     }
+
+/*----------------------------------- Supports for animation timeline, If it doesn't support this, make sure that the fake gapper is removed so scroll doesn't take too long --------------------------------------*/
+
+      @supports not (animation-timeline: scroll(root)) {
+        .my-work-section-fake-gapper {
+            display: none;
+        }
+
+        main {
+            height: calc(var(--landing-section-height) + (var(--my-work-section-amount) * var(--my-work-section-height)) - var(--fake-gapper-height)); /* 100vh (landing) + 100vh × 4 sections - the fake gapper height since that is removed */
+        }
+    }
+
 </style>
