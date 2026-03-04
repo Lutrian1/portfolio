@@ -98,6 +98,6 @@
 		height: 95%;
 		top: 5%;
 		left: 1%;
-		z-index: 500;
+		z-index: 50;
 	}
 </style>
