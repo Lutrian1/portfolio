@@ -32,9 +32,6 @@
         grid-template-columns: var(--grid-columns);
         width: 100%;
         left: 0;
-        @media (min-width: 768px) {
-            min-height: 90%;
-        }
     }
 
     article{
