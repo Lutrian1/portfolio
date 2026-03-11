@@ -1,3 +1,8 @@
+<script>
+    import grungeTexture from '$lib/assets/images/grunge-texture.avif';
+    import paintTexture from '$lib/assets/images/paint-texture.jpg';
+</script>
+
 <div class="noise-fg"></div>
 
 <svg width="100%" height="100%" style="position:absolute;">
@@ -6,6 +11,18 @@
 	  <feDisplacementMap in="SourceGraphic" in2="NOISE" scale="20" xChannelSelector="R" yChannelSelector="R"></feDisplacementMap>  
     </filter>
 </svg>
+
+<img 
+	src={grungeTexture} 
+	alt=""
+	class="grunge-texture"
+/>
+
+<img 
+	src={paintTexture} 
+	alt=""
+	class="paint-texture"
+/>
 
 <style>
     
@@ -23,6 +40,25 @@
     height: calc(100% + 20rem);
     content: "";
     z-index: 50000;
+}
+
+.grunge-texture, .paint-texture  {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mix-blend-mode: overlay;
+    z-index: 50001;
+}
+
+.grunge-texture{
+    opacity: .8;
+}
+
+.paint-texture{
+    opacity: .15;
 }
 
 @keyframes noise-animation {

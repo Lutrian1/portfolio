@@ -3,7 +3,7 @@
 	import gsap  from "gsap";
 	import favicon from '$lib/assets/images/logo-luuk-tol.png';
 	import '$lib/css/global-styles.css';
-	import { NoiseBackground } from '$lib';
+	import { Textures } from '$lib';
 
 	let { children } = $props();
 </script>
@@ -14,4 +14,4 @@
 
 {@render children()}
 
-<NoiseBackground />
+<Textures />
