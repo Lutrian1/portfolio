@@ -44,6 +44,7 @@
 
 .grunge-texture, .paint-texture  {
     position: fixed;
+    pointer-events: none;
     top: 0;
     left: 0;
     width: 100%;
