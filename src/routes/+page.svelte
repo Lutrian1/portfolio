@@ -3,25 +3,25 @@
 </script>
 
 <main>
-    <div class="landing-section js-disabled">
+    <div class="landing-section">
         <LandingPageSection />
     </div>
 
-    <div class="my-work-section-fake-gapper js-disabled"></div>
+    <div class="my-work-section-fake-gapper"></div>
     
-    <section class="my-work-section-title js-disabled">
+    <section class="my-work-section-title">
         <h4>MY WORK</h4>
     </section>
 
-    <section class="my-work-section-first-project js-disabled">
+    <section class="my-work-section-first-project">
         <h5>BATS!</h5>
     </section>
     
-    <section class="my-work-section-second-project js-disabled">
+    <section class="my-work-section-second-project">
         <h5>HEY JOH!</h5>
     </section>
  
-    <section class="my-work-section-third-project js-disabled">
+    <section class="my-work-section-third-project">
         <h5>DIKKE W!</h5>
     </section>
 </main>
@@ -48,10 +48,8 @@
             justify-content: center;
             align-items: center;
         }
-
-    /*----------------------------------- Section styling (JS DISABLED) --------------------------------------*/
-        /* Styling when js is disabled */
-        .js-disabled{
+        
+        [class*="section"]{
             position: sticky;
             top: 0;
             left: 0;
@@ -133,62 +131,6 @@
         }
 
         .my-work-section-third-project{
-            background-color: yellow;
-            z-index: 40;
-        }
-
-    /*----------------------------------- Section styling (JS ENABLED) --------------------------------------*/
-        /* These styles will only apply when JS adds the js-enabled class */
-
-        /* General section styling (when JS is Enabled) */
-        :global(.js-enabled) .landing-section,
-        :global(.js-enabled) [class^="my-work-section"] {
-            position: fixed;
-            width: 100%;
-            left: 0;
-        }
-
-        /* Disable CSS animations when JS is enabled */
-        :global(.js-enabled) .landing-section :global(h2) {
-            animation: none;
-            position: fixed;
-        }
-
-        /* Hide the fake gapper when JS is enabled */
-        :global(.js-enabled) .my-work-section-fake-gapper {
-            display: none;
-        }
-
-        :global(.js-enabled) [class^="my-work-section"] {
-            height: var(--my-work-section-height);
-            top: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* --- Styling for individual sections (when JS is Enabled) --- */
-        :global(.js-enabled) .landing-section {
-            top: 0;
-            z-index: 10;
-        }
-
-        :global(.js-enabled) .my-work-section-title {
-            background-color: var(--color-neutral-300);
-            z-index: 20;
-        }
-
-        :global(.js-enabled) .my-work-section-first-project {
-            background-color: red;
-            z-index: 30;
-        }
-
-        :global(.js-enabled) .my-work-section-second-project {
-            background-color: blue;
-            z-index: 35;
-        }
-
-        :global(.js-enabled) .my-work-section-third-project {
             background-color: yellow;
             z-index: 40;
         }
