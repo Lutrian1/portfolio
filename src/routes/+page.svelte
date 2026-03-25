@@ -80,6 +80,49 @@
             animation-range: 75vh var(--fake-gapper-height); /* Animation starts at the first value, ends at the height of the fake-gapper */
         }
 
+        .my-work-section-fake-gapper {
+            height: var(--fake-gapper-height);
+            top: 0;
+            z-index: 5;
+            background: transparent;
+            pointer-events: none;
+        }   
+        
+        .my-work-section-title {
+            background-color: var(--color-neutral-300);
+            z-index: 20;
+        }
+
+        .my-work-section-first-project{
+            background-color: red;
+            z-index: 30;
+        }
+
+        .my-work-section-second-project{
+            background-color: blue;
+            z-index: 35;
+        }
+
+        .my-work-section-third-project{
+            background-color: yellow;
+            z-index: 40;
+            /*
+            animation: zoom-out-and-round linear forwards;
+            animation-timeline: scroll(root);
+             Animates during the 5th and 6th "viewports" of scroll 
+            animation-range: 600vh 700vh;*/
+        }
+
+    }
+/*----------------------------------- TYPOGRAPHY --------------------------------------*/
+    h4, h5 {
+        color: var(--color-neutral-2000);
+        font-size: var(--ultra-big-font-size);
+        text-transform: uppercase;
+        font-family: var(--extra-expanded-font);
+    }
+
+/*----------------------------------- ANIMATIONS --------------------------------------*/
         /* Keyframes for the text animation */
         @keyframes animation-move-to-center-and-scale {
             0% {
@@ -107,42 +150,10 @@
             }
         }
 
-        .my-work-section-fake-gapper {
-            height: var(--fake-gapper-height);
-            top: 0;
-            z-index: 5;
-            background: transparent;
-            pointer-events: none;
-        }   
-        
-        .my-work-section-title {
-            background-color: var(--color-neutral-300);
-            z-index: 20;
+        @keyframes zoom-out-and-round {
+            0% { transform: scale(1); border-radius: 0px; }
+            50%, 100% { transform: scale(0.8); border-radius: 40px; }
         }
-
-        .my-work-section-first-project{
-            background-color: red;
-            z-index: 30;
-        }
-
-        .my-work-section-second-project{
-            background-color: blue;
-            z-index: 35;
-        }
-
-        .my-work-section-third-project{
-            background-color: yellow;
-            z-index: 40;
-        }
-
-    }
-/*----------------------------------- TYPOGRAPHY --------------------------------------*/
-    h4, h5 {
-        color: var(--color-neutral-2000);
-        font-size: var(--ultra-big-font-size);
-        text-transform: uppercase;
-        font-family: var(--extra-expanded-font);
-    }
 
 /*----------------------------------- Supports for animation timeline, If it doesn't support this, make sure that the fake gapper is removed so scroll doesn't take too long --------------------------------------*/
 
