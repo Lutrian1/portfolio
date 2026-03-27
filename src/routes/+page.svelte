@@ -1,37 +1,5 @@
 <script>
-    import { LandingPageSection } from '$lib';
-    import { gsap } from 'gsap';
-    import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
-
-    // Register GSAP plugin
-    gsap.registerPlugin(ScrollTrigger);
-
-    const splitText = (text) => text.split("");
-
-    $effect(() => {
-        // Target all h4 and h5 tags inside your work sections
-        const titles = document.querySelectorAll('[class*="section"] h4, [class*="section"] h5');
-
-        titles.forEach(title => {
-            const letters = title.querySelectorAll('.letter');
-            
-            // Staggered fade-in animation
-            if (letters.length > 0) {
-                gsap.from(letters, {
-                    scrollTrigger: {
-                        trigger: title,
-                        start: "top 85%", // Starts when the title is near the bottom
-                        toggleActions: "play none none reverse"
-                    },
-                    opacity: 0,
-                    y: 30,
-                    stagger: 0.04,
-                    duration: 0.6,
-                    ease: "power2.out"
-                });
-            }
-        });
-    });
+    import { LandingPageSection } from '$lib'
 </script>
 
 <main>
@@ -42,43 +10,23 @@
     <div class="my-work-section-fake-gapper"></div>
     
     <section class="my-work-section-title">
-        <h4>
-            {#each splitText("MY WORK") as char}
-                <span class="letter">{char === " " ? "\u00A0" : char}</span>
-            {/each}
-        </h4>
+        <h4>MY WORK</h4>
     </section>
 
     <section class="my-work-section-first-project">
-        <h5>
-            {#each splitText("BATS!") as char}
-                <span class="letter">{char === " " ? "\u00A0" : char}</span>
-            {/each}
-        </h5>
+        <h5>BATS!</h5>
     </section>
     
     <section class="my-work-section-second-project">
-        <h5>
-            {#each splitText("HEY JOH!") as char}
-                <span class="letter">{char === " " ? "\u00A0" : char}</span>
-            {/each}
-        </h5>
+        <h5>HEY JOH!</h5>
     </section>
-
+ 
     <section class="my-work-section-third-project">
-        <h5>
-            {#each splitText("DIKKE W!") as char}
-                <span class="letter">{char === " " ? "\u00A0" : char}</span>
-            {/each}
-        </h5>
+        <h5>DIKKE W!</h5>
     </section>
 
     <section class="about-me-section">
-        <h5>
-            {#each splitText("ABOUT ME") as char}
-                <span class="letter">{char === " " ? "\u00A0" : char}</span>
-            {/each}
-        </h5>
+        <h5>ABOUT ME</h5>
     </section>
 </main>
 
@@ -95,10 +43,6 @@
         position: relative;
         /* Total height calculation */
         height: calc(var(--fake-gapper-height) + var(--landing-section-height) + (var(--my-work-and-about-section-amount) * var(--my-work-section-height)));
-    }
-
-    .letter {
-        display: inline-block; /* Required for GSAP to animate transforms */
     }
 
 /*----------------------------------- Section styling --------------------------------------*/
