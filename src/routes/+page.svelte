@@ -219,7 +219,7 @@
         main { 
             height: auto; 
         }
-        .landing-section :global(h2) { 
+        [class*="section"]  { 
             animation: none !important; 
         }
     }
