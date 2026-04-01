@@ -112,7 +112,7 @@ html{
     /*----------------------------------- Semantic Names --------------------------------------*/
     
     --webpage-bg-color: var(--color-neutral-2000);
-    --text-color-primary: var(--color-neutral-450);
+    --text-color-primary: var(--color-neutral-1000);
 
     --h2-and-h3-color: var(--color-neutral-300);
     
