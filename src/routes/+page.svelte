@@ -31,14 +31,11 @@
 </main>
 
 <style>
-    :root {
+    main {
         --fake-gapper-height: 250vh;
         --my-work-and-about-section-amount: 5;
         --my-work-section-height: 100vh;
         --landing-section-height: 100vh;
-    }
-
-    main {
         overflow-x: clip;
         position: relative;
         /* Total height calculation */
@@ -218,6 +215,9 @@
         }
         main { 
             height: auto; 
+        }
+        [class*="section"]{
+            animation: none !important;
         }
         .landing-section :global(h2) { 
             animation: none !important; 
