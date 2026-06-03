@@ -5,4 +5,6 @@ export { default as JustWingItText2 } from './components/atomns/JustWingItText2.
 export { default as Textures } from './components/atomns/Textures.svelte';
 export { default as LandingPageSection } from './components/molecules/LandingPageSection.svelte';
 export { default as MyFigure3D } from './components/organisms/MyFigure3D.svelte';
+export { default as LoadingScreen } from './components/organisms/Loading.svelte';
+export { default as GhostLayer } from './components/organisms/GhostLayer.svelte';
 

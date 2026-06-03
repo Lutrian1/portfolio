@@ -1,5 +1,7 @@
 <script>
     import { LandingPageSection } from '$lib';
+    import { LoadingScreen } from '$lib';
+    import { GhostLayer } from '$lib';
     import { onMount } from 'svelte';
     import { gsap } from 'gsap';
     import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
@@ -8,6 +10,7 @@
 
     gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
+    let isLoading = true;
     let canvasContainer;
 
     // --- SNAP LOGIC ---
@@ -144,10 +147,16 @@
     $: pathData = `M ${trailPoints.map(p => `${p.x},${p.y}`).join(' L ')}`;
 </script>
 
+{#if isLoading}
+    <LoadingScreen on:complete={() => isLoading = false} />
+{/if}
+
 <button class="nav-pilot-btn" on:click={goToNextSection}>
     <span class="btn-text">NEXT PHASE</span>
     <div class="btn-bg"></div>
 </button>
+
+<GhostLayer />
 
 <main>
     <div bind:this={canvasContainer} class="ogl-canvas-container"></div>
