@@ -42,10 +42,12 @@
         left: calc(-1 * var(--grid-gap));
         border-radius: var(--border-radius-landing-card1);
         background-color: var(--color-neutral-100);
+        box-shadow:   10px 10px 10px white,
+        -10px -10px 10px white;
     }
 
     h2, h3{
-        color: var(--h2-and-h3-color);
+        color: red;
         font-family: var(--semi-condensed-font);
         text-transform: uppercase;
         font-weight: normal;

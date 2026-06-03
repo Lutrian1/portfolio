@@ -48,7 +48,7 @@
 	}
 	
 	div div{
-		color: var(--h2-and-h3-color);
+		color: red;
 		font-family: var(--semi-condensed-font);
 		text-transform: uppercase;
 		text-align: center;

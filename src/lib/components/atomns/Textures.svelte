@@ -39,7 +39,7 @@
     width: calc(100% + 20rem);
     height: calc(100% + 20rem);
     content: "";
-    z-index: 50000;
+    z-index: 9999;
 }
 
 .grunge-texture, .paint-texture  {
@@ -50,8 +50,8 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    mix-blend-mode: overlay;
-    z-index: 50001;
+    mix-blend-mode: hue;
+    z-index: 9999;
 }
 
 .grunge-texture{
